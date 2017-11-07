@@ -18,21 +18,9 @@ var frequency = "";
 
 $(document).ready(function(){
 
-	//Read data from database
-	database.ref().on("value", function(snapshot){
-		$("#train").html(snapshot.val().name);
-		$("#destination").html(snapshot.val().destination);
-		$("#time").html(snapshot.val().time);
-		$("#frequency").html(snapshot.val().frequency);
-
-	}, function(errorObject){
-		console.log("The READ failed: " + errorObject.code);
-	});
-
 	//Whenever #add-button button is clicked
-	$("#add-button").on("click", function(event){
+	$("#add-button").on("click", function(){
 
-		event.preventDefault();
 		//Store values from user input
 		var aName = $("#train").val().trim();
 		var aDestination = $("#destination").val().trim();
